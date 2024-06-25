@@ -10,7 +10,7 @@ on:
     types: [published]
 
 jobs:
-  # Publish to Microsoft Store
+# # Publish to Microsoft Store
   publish:
     runs-on: ubuntu-latest
     steps:
@@ -34,11 +34,11 @@ jobs:
         target: '${{ github.workspace }}/release.msix'
 
     # Publish to Microsoft Store
-    - uses: isaacrlevin/windows-store-action@main
-      name: Publish to Store
-      with:
-        tenant-id: ${{ secrets.AZURE_AD_TENANT_ID }}
-        client-id: ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }}
-        client-secret: ${{ secrets.AZURE_AD_APPLICATION_SECRET }}
-        app-id: ${{ secrets.STORE_APP_ID }}
-        package-path: '${{ github.workspace }}'
+    #- uses: isaacrlevin/windows-store-action@main
+    # name: Publish to Store
+    # with:
+    #   tenant-id: ${{ secrets.AZURE_AD_TENANT_ID }}
+    #   client-id: ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }}
+    #   client-secret: ${{ secrets.AZURE_AD_APPLICATION_SECRET }}
+    #   app-id: ${{ secrets.STORE_APP_ID }}
+    #   package-path: '${{ github.workspace }}'
