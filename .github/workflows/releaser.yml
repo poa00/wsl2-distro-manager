@@ -25,7 +25,7 @@ jobs:
           $wsl2_manager_version = [regex]::match($string, $pattern).Groups[1].Value
           # Make web REST call to check if release already exists
           Try {
-            $result = $(Invoke-RestMethod -Uri https://api.github.com/repos/bostrot/wsl2-distro-manager/releases/tags/v$wsl2_manager_version)
+            $result = $(Invoke-RestMethod -Uri https://api.github.com/repos/poa00/wsl2-distro-manager/releases/tags/v$wsl2_manager_version)
           } Catch {
             $result = $false
           }
